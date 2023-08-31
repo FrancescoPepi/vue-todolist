@@ -44,14 +44,35 @@
     />
   </head>
   <body>
-    <div id="app">
-      <ul>
+    <div class="container" id="app">
+      <div class="input-group my-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Recipient's username"
+          aria-label="Recipient's username"
+          aria-describedby="button-addon2"
+          v-model="newTodo"
+        />
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          id="button-addon2"
+          @click="pushNew()"
+        >
+          Aggiungi
+        </button>
+      </div>
+      <ul class="p-0">
         <li
           v-for="(element,index) in todoList"
           :class="(element.done)?'barrato':''"
+          class="canc"
         >
           <span @click="barra(index)"> {{element.item}} </span>
-          <i @click="removeItem(index)" class="fa-solid fa-xmark fa-l"></i>
+          <span>
+            <i @click="removeItem(index)" class="fa-solid fa-xmark fa-l"></i>
+          </span>
         </li>
       </ul>
     </div>

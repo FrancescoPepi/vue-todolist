@@ -17,6 +17,7 @@ createApp({
           done: false,
         },
       ],
+      newTodo: "",
     };
   },
   methods: {
@@ -29,6 +30,13 @@ createApp({
     },
     removeItem(index) {
       this.todoList.splice(index, 1);
+    },
+    pushNew() {
+      if (!this.newTodo == "")
+        this.todoList.unshift({
+          item: this.newTodo,
+          done: false,
+        });
     },
   },
 }).mount("#app");

@@ -45,4 +45,9 @@ Aggiungere una _X_ accanto ad ogni item
 
 - aggiungere funzione che al click si toglie la sbarratura.
 
+---
+
+**_MILESTONE 3_**  
+Predisporre un campo di input testuale e un pulsante "aggiungi": cliccando sul pulsante, il testo digitato viene letto e utilizzato per creare un nuovo todo, che quindi viene aggiunto alla lista dei todo esistenti.
+
 ## FINE
