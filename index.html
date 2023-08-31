@@ -47,10 +47,11 @@
     <div id="app">
       <ul>
         <li
-          v-for="(item,index) in todoList"
-          :class="(item.todo == true)?'barrato':''"
+          v-for="(element,index) in todoList"
+          :class="(element.done)?'barrato':''"
+          @click="barra(index)"
         >
-          {{item.item}}
+          {{element.item}}
         </li>
       </ul>
     </div>
