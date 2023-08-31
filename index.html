@@ -49,9 +49,9 @@
         <li
           v-for="(element,index) in todoList"
           :class="(element.done)?'barrato':''"
-          @click="barra(index)"
         >
-          {{element.item}}
+          <span @click="barra(index)"> {{element.item}} </span>
+          <i @click="removeItem(index)" class="fa-solid fa-xmark fa-l"></i>
         </li>
       </ul>
     </div>

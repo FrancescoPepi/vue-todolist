@@ -21,12 +21,14 @@ createApp({
   },
   methods: {
     barra(index) {
-      console.log(this.todoList[index].done);
       if (this.todoList[index].done) {
         this.todoList[index].done = false;
       } else {
         this.todoList[index].done = true;
       }
+    },
+    removeItem(index) {
+      this.todoList.splice(index, 1);
     },
   },
 }).mount("#app");

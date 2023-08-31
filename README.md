@@ -41,4 +41,8 @@ aggiungere un controllo:
 **_MILESTONE 2_**  
 Visualizzare a fianco ad ogni item ha una "x": cliccando su di essa, il todo viene rimosso dalla lista.
 
+Aggiungere una _X_ accanto ad ogni item
+
+- aggiungere funzione che al click si toglie la sbarratura.
+
 ## FINE
