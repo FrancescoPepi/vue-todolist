@@ -44,6 +44,15 @@
     />
   </head>
   <body>
-    <div id="app">{{ message }}</div>
+    <div id="app">
+      <ul>
+        <li
+          v-for="(item,index) in todoList"
+          :class="(item.todo == true)?'barrato':''"
+        >
+          {{item.item}}
+        </li>
+      </ul>
+    </div>
   </body>
 </html>
