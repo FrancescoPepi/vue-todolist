@@ -53,6 +53,7 @@
           aria-label="Recipient's username"
           aria-describedby="button-addon2"
           v-model="newTodo"
+          @keyup.enter="pushNew()"
         />
         <button
           class="btn btn-outline-secondary"
