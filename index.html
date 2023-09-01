@@ -44,38 +44,45 @@
     />
   </head>
   <body>
-    <div class="container" id="app">
-      <div class="input-group my-3">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Recipient's username"
-          aria-label="Recipient's username"
-          aria-describedby="button-addon2"
-          v-model="newTodo"
-          @keyup.enter="pushNew()"
-        />
-        <button
-          class="btn btn-outline-secondary"
-          type="button"
-          id="button-addon2"
-          @click="pushNew()"
-        >
-          Aggiungi
-        </button>
+    <div class="container-fluid" id="app">
+      <div class="col-md-6 mx-auto">
+        <div class="input-group my-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Inserisci l'item alla tua lista"
+            aria-label="Inserisci l'item alla tua lista"
+            aria-describedby="button-addon2"
+            v-model="newTodo.item"
+            @keyup.enter="pushNew()"
+          />
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            id="button-addon2"
+            @click="pushNew()"
+          >
+            Aggiungi
+          </button>
+        </div>
+        <!-- error -->
+        <div v-show="error.done" class="alert alert-danger">
+          Error: {{error.msg}}
+        </div>
+        <ul v-if="(todoList.length)" class="p-0">
+          <li
+            v-for="(element,index) in todoList"
+            :class="(element.done)?'barrato':''"
+            class="canc alert alert-primary"
+          >
+            <span @click="barra(index)"> {{element.item}} </span>
+            <span>
+              <i @click="removeItem(index)" class="fa-solid fa-xmark fa-l"></i>
+            </span>
+          </li>
+        </ul>
+        <div v-else="" class="alert alert-danger">La lista è vuota</div>
       </div>
-      <ul class="p-0">
-        <li
-          v-for="(element,index) in todoList"
-          :class="(element.done)?'barrato':''"
-          class="canc"
-        >
-          <span @click="barra(index)"> {{element.item}} </span>
-          <span>
-            <i @click="removeItem(index)" class="fa-solid fa-xmark fa-l"></i>
-          </span>
-        </li>
-      </ul>
     </div>
   </body>
 </html>
